@@ -1,0 +1,36 @@
+.contact {
+    @media (max-width: $tablet-width) {
+      margin-right: 40px;
+    }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    &:hover {
+      span {
+        color: $blue-lagoon;
+      }
+
+      svg {
+        fill: $blue-lagoon;
+      }
+    }
+
+
+    span {
+      color: $base-white;
+      font-size: 16px;
+      line-height: 18px;
+
+      @media (max-width: $tablet-width) {
+        display: none;
+      }
+    }
+
+    svg {
+      fill: $deep-sky-blue;
+    }
+  }
+}

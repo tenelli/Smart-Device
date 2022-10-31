@@ -1,0 +1,137 @@
+.welcome {
+  background-color: red;
+  padding-top: 305px;
+  padding-bottom: 280px;
+  background-image: url("../img/background_desktop.jpg");
+  background-size: cover;
+
+  @media (min-width: 1024px) {
+    @include retina {
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-top: 180px;
+    padding-bottom: 205px;
+    background-image: url("../img/background_tablet.jpg");
+
+    @include retina {
+      background-image: url("../img/background_tablet@2x.jpg");
+    }
+  }
+
+  @media (max-width: $mobile-width) {
+    background-image: url("../img/background_mobile.jpg");
+    padding-top: 150px;
+    padding-bottom: 190px;
+
+    @include retina {
+      background-image: url("../img/background_mobile@2x.jpg");
+    }
+  }
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    font-family: $roboto-condensed;
+    text-transform: uppercase;
+    color: $base-white;
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 94px;
+    letter-spacing: 0.07em;
+    margin-bottom: 40px;
+    padding-left: 10%;
+
+    @media (max-width: $tablet-width) {
+      font-size: 64px;
+      line-height: 75px;
+      padding-left: 0;
+    }
+
+    @media (max-width: $mobile-width) {
+      font-size: 36px;
+      line-height: 42px;
+    }
+  }
+
+  p {
+    color: white;
+    font-size: 22px;
+    line-height: 34px;
+    margin: 0;
+    padding-left: 10%;
+    margin-bottom: 55px;
+
+    @media (max-width: $tablet-width) {
+      font-size: 22px;
+      line-height: 34px;
+      padding-left: 0;
+      margin-bottom: 65px;
+    }
+
+    @media (max-width: $mobile-width) {
+      font-size: 14px;
+      line-height: 22px;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    padding-left: 10%;
+
+    @media (max-width: $tablet-width) {
+      padding-left: 45px;
+    }
+
+    @media (max-width: $mobile-width) {
+      padding-left: 0;
+    }
+
+    span {
+      color: $base-white;
+      text-transform: uppercase;
+      font-family: $roboto-condensed;
+      font-size: 18px;
+      line-height: 21px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      background-color: $deep-sky-blue;
+      padding: 15px 25px;
+      text-align: center;
+      border-radius: 3px;
+
+      &:hover {
+        background-color: $blue-lagoon;
+        border-radius: 6px;
+      }
+
+      @media (max-width: $tablet-width) {
+        font-size: 18px;
+        line-height: 21px;
+      }
+
+      @media (max-width: $mobile-width) {
+        font-size: 14px;
+        line-height: 16px;
+      }
+    }
+
+    span:first-of-type {
+      @media (max-width: $mobile-width) {
+        display: none;
+      }
+    }
+
+    span:last-of-type {
+      display: none;
+      @media (max-width: $mobile-width) {
+        display: block;
+        width: 220px;
+      }
+    }
+  }
+}
