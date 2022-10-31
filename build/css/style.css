@@ -590,7 +590,6 @@ button,
   -ms-flex-direction: column;
   flex-direction: column;
   min-height: 100vh;
-  /* stylelint-disable-next-line */
   min-height: calc(100 * var(--vh, 1vh));
 }
 
@@ -639,7 +638,6 @@ button,
 }
 
 .no-transition {
-  /* stylelint-disable-next-line */
   -webkit-transition: none !important;
   -o-transition: none !important;
   transition: none !important;
