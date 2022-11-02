@@ -1229,11 +1229,6 @@ button,
   grid-template-columns: 1fr 1fr;
 }
 
-.panel.show,
-.panel.no-js {
-  display: block;
-}
-
 .accordion.active::before {
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -1841,6 +1836,11 @@ button,
 
   .panel {
     display: none;
+  }
+
+  .panel.show,
+  .panel.no-js {
+    display: block;
   }
 }
 

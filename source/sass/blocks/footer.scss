@@ -176,9 +176,10 @@
 
 .panel.show,
 .panel.no-js {
-  display: block;
+  @media (max-width: $mobile-width) {
+    display: block;
+  }
 }
-
 
 .accordion.active::before {
   transform: rotate(0deg);
