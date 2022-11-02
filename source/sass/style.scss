@@ -11,8 +11,8 @@
 @import "variables";
 @import "mixins";
 @import "global/fonts";
-@import "global/reboot";
 @import "global/utils";
+@import "global/reboot";
 @import "global/container";
 
 // Blocks
@@ -27,6 +27,8 @@
 @import "blocks/callback";
 @import "blocks/form";
 @import "blocks/accept";
+@import "blocks/footer";
+
 
 // ---------------------------------
 
