@@ -1,0 +1,23 @@
+.form {
+  input,
+  textarea {
+    margin: 0;
+    padding: 15px;
+    background-color: $black-opacity;
+    color: $base-black;
+    border: 0;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: $base-white;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  input {
+    margin-bottom: 20px;
+  }
+}
+
+

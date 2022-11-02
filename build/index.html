@@ -100,16 +100,22 @@
         </ul>
         </div>
       </section>
-      <section>
+      <section class="about">
         <div class="container">
-          <h3>О компании</h3>
-          <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии
-          с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
-          <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
-          Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</p>
-          <p>Smart Device - это команда профессионалов. Через нас прошло более 1 000 000 клиентов, 70% из которых продолжают сотрудничество по сей день. На данный момент насчитывается более 14 офисов по всей стране и 20 городов присутствия.</p>
-          <p>Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и время наших клиентов</p>
-          <button type="button">Подробнее</button>
+          <div class="about__text">
+            <h3>О компании</h3>
+            <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии
+            с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.</p>
+            <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
+              <span class="about__desktop">Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span>
+            </p>
+            <p class="about__additional no-js">
+              <span class="about__mobile">Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span>
+            </p>
+            <p class="about__additional no-js">Smart Device - это команда профессионалов. Через нас прошло более 1 000 000 клиентов, 70% из которых продолжают сотрудничество по сей день. На данный момент насчитывается более 14 офисов по всей стране и 20 городов присутствия.</p>
+            <p class="about__additional no-js">Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и время наших клиентов</p>
+            <button type="button" class="about__more-button closed no-js__button">Подробнее</button>
+          </div>
         </div>
       </section>
       <section class="products">
@@ -130,24 +136,37 @@
           </div>
         </div>
       </section>
-      <section>
+      <section class="callback">
         <div class="container">
-          <h2>Остались вопросы? Задайте их нам!</h2>
-          <p>Мы проконсультируем Вас бесплатно</p>
-          <form action="https://echo.htmlacademy.ru" method="post">
-            <label>
-              <input type="text" name="user-name" placeholder="Имя" required>
-            </label>
-            <label>
-              <input type="phone" name="user-phone-number" placeholder="Телефон" maxlength="18" required data-phone-pattern>
-            </label>
-            <label>
-              <textarea name="user-question" placeholder="Ваш вопрос"></textarea>
-            </label>
-            <button type="submit">Задать вопрос</button>
-            <input type="checkbox" id="user-data" name="user-accept" required>
-            <label for="user-data">Я согласен на обработку персональных данных</label>
-          </form>
+          <div class="callback__wrapper">
+            <div class="callback__image"></div>
+            <div class="callback__form-wrapper">
+              <h2>Остались вопросы? Задайте их нам!</h2>
+              <p>Мы проконсультируем Вас бесплатно</p>
+              <form class="form callback__form" action="https://echo.htmlacademy.ru" method="post">
+                <div class="callback__inputs-wrapper">
+                  <label>
+                    <input type="text" name="user-name" placeholder="Имя" required>
+                  </label>
+                  <label>
+                    <input type="phone" name="user-phone-number" placeholder="Телефон" maxlength="18" required data-phone-pattern>
+                  </label>
+                </div>
+                <label>
+                  <textarea name="user-question" placeholder="Ваш вопрос" cols="30" rows="10"></textarea> <br>
+                </label>
+                <div class="callback__submit-wrapper">
+                  <button type="submit">Задать вопрос</button>
+                  <div class="callback__checkbox-wrapper accept">
+                    <input type="checkbox" id="user-data" name="user-accept" class="visually-hidden" required>
+                    <label for="user-data">Я согласен на обработку персональных данных</label>
+                  </div>
+                </div>
+
+
+              </form>
+            </div>
+          </div>
         </div>
       </section>
     </main>

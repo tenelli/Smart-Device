@@ -47,6 +47,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // https://webkaa.ru/javascript/maska-nomera-telefona-js
 
+// маска
 document.addEventListener('DOMContentLoaded', function () {
   const onEventCallback = function (evt) {
     const el = evt.target;
@@ -82,3 +83,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 });
+
+// показываем дополнительный текст в блоке "О компании"
+let moreButton = document.querySelector('.about__more-button');
+let additional = document.querySelectorAll('.about__additional');
+additional.forEach((element) => {
+  element.classList.add('visually-hidden');
+});
+
+if (moreButton) {
+  moreButton.classList.remove('no-js__button');
+  additional.forEach((element) => {
+    element.classList.remove('no-js');
+  });
+  moreButton.addEventListener('click', showMore);
+}
+
+function showMore() {
+  moreButton.classList.toggle('closed');
+  if (!moreButton.classList.contains('closed')) {
+    moreButton.textContent = 'Скрыть';
+    additional.forEach((element) => {
+      element.classList.remove('visually-hidden');
+    });
+  } else {
+    moreButton.textContent = 'Подробнее';
+    additional.forEach((element) => {
+      element.classList.add('visually-hidden');
+    });
+  }
+}

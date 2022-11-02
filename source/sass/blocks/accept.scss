@@ -1,0 +1,30 @@
+.accept label {
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid $base-white;
+    border-radius: 2px;
+    background-color: $transparent;
+  }
+}
+
+.accept input:checked + label::after {
+  content: "";
+  position: absolute;
+  background-image: url("../img/svg/check.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  left: 3px;
+  width: 12px;
+  height: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}

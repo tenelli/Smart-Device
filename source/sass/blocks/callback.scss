@@ -1,0 +1,176 @@
+.callback {
+  background-color: $deep-sky-blue;
+  background-image: url("../../img/triangle.png");
+  background-size: cover;
+  padding-top: 170px;
+  padding-bottom: 250px;
+
+  @media (max-width: $tablet-width) {
+    background-image: none;
+    padding-top: 50px;
+    padding-bottom: 125px;
+  }
+
+  @media (max-width: $mobile-width) {
+    padding-bottom: 90px;
+  }
+
+  h2 {
+    margin: 0;
+    margin-bottom: 15px;
+    font-family: $roboto-condensed;
+    color: $base-white;
+    font-size: 36px;
+    line-height: 51px;
+    font-weight: 400;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin-bottom: 20px;
+      font-size: 30px;
+      line-height: 42px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 22px;
+    color: $base-white;
+    margin-bottom: 35px;
+    padding-left: 5px;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 25px;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin-bottom: 40px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+  }
+}
+
+
+.callback__form  {
+  @media (min-width: $desktop-width) {
+    padding-left: 5px;
+    max-width: 580px;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  textarea {
+    width: calc(100% - 30px);
+    @media (min-width: $desktop-width) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 35px;
+      max-height: 105px;
+    }
+
+    @media (max-width: $mobile-width) {
+      margin-bottom: 30px;
+      max-height: 150px;
+    }
+  }
+
+  input {
+    @media (min-width: $desktop-width) {
+      width: 245px;
+    }
+    @media (max-width: $tablet-width) {
+      width: calc(100% - 30px);
+    }
+  }
+
+  button {
+    width: 265px;
+    font-family: $roboto-condensed;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    background-color: $black-pearl-2;
+    padding: 15px 25px;
+    color: $base-white;
+    text-transform: uppercase;
+    border-radius: 3px;
+
+    @media (max-width: $mobile-width) {
+      margin-bottom: 25px;
+      width: 100%;
+    }
+  }
+}
+
+.callback__wrapper {
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+
+
+.callback__image {
+  @media (min-width: $desktop-width) {
+    max-width: 510px;
+    background-position: 0 76px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("../../img/plane.png");
+
+    @include retina {
+      background-image: url("../img/plane@2x.png");
+    }
+  }
+}
+
+.callback__inputs-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+
+  @media (max-width: $tablet-width) {
+    width: 100%;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: block;
+  }
+}
+
+.callback__submit-wrapper {
+  display: flex;
+  gap: 50px;
+
+  @media (max-width: $tablet-width) {
+    gap: 85px;
+  }
+
+  @media (max-width: $mobile-width) {
+    display: block;
+  }
+}
+
+.callback__checkbox-wrapper {
+  width: 260px;
+  display: flex;
+  align-items: center;
+
+  label {
+    color: $base-white;
+    font-size: 14px;
+    line-height: 16px;
+    padding-left: 26px;
+  }
+}
