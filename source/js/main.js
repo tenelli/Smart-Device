@@ -113,3 +113,39 @@ function showMore() {
     });
   }
 }
+
+let acc = document.querySelectorAll('.accordion');
+let panel = document.querySelectorAll('.panel');
+if (acc && panel) {
+  acc.forEach((element) => {
+    if (element.classList.contains('no-js')) {
+      element.classList.remove('no-js');
+    }
+  });
+
+  panel.forEach((element) => {
+    if (element.classList.contains('no-js')) {
+      element.classList.remove('no-js');
+    }
+  });
+
+
+  acc.forEach((element) => {
+    element.addEventListener('click', () => {
+      let setClasses = !element.classList.contains('active');
+      setClass(acc, 'active', 'remove');
+      setClass(panel, 'show', 'remove');
+
+      if (setClasses) {
+        element.classList.toggle('active');
+        element.nextElementSibling.classList.toggle('show');
+      }
+    });
+  });
+}
+
+function setClass(els, className, fnName) {
+  for (let i = 0; i < els.length; i++) {
+    els[i].classList[fnName](className);
+  }
+}

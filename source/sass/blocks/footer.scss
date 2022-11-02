@@ -12,6 +12,26 @@
     line-height: 16px;
     font-weight: 400;
     letter-spacing: 0.05em;
+
+    @media (max-width: $mobile-width) {
+      position: relative;
+
+      &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 1px;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: white;
+    }
+
+    &::before {
+      transform: rotate(90deg);
+    }
+    }
   }
 
   a {
@@ -106,10 +126,6 @@
       column-gap: 30px;
       row-gap: 10px;
     }
-
-    @media (max-width: $tablet-width) {
-      display: block;
-    }
   }
 
   li {
@@ -134,6 +150,12 @@
     li:first-child {
       margin-bottom: 15px;
     }
+
+    li:not(:first-child) {
+      a {
+        line-height: 25px;
+      }
+    }
   }
 }
 
@@ -144,4 +166,20 @@
   @media (max-width: $mobile-width) {
     display: block;
   }
+}
+
+.panel {
+  @media (max-width: $mobile-width) {
+    display: none;
+  }
+}
+
+.panel.show,
+.panel.no-js {
+  display: block;
+}
+
+
+.accordion.active::before {
+  transform: rotate(0deg);
 }
