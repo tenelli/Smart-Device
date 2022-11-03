@@ -149,3 +149,79 @@ function setClass(els, className, fnName) {
     els[i].classList[fnName](className);
   }
 }
+
+let order = document.querySelector('.order');
+let modal = document.querySelector('.modal');
+let closeButton = document.querySelector('.modal__close-button');
+let pageBody = document.body;
+
+const userNameInputOnModal = document.querySelector('[data-input-username]');
+
+if (order) {
+  order.addEventListener('click', modalOpen);
+}
+
+function isEscapeKey(evt) {
+  return evt.key === 'Escape';
+}
+
+
+function closeModal() {
+  modal.classList.add('visually-hidden');
+  pageBody.classList.remove('scroll-lock');
+  closeButton.removeEventListener('click', closeModal);
+  document.removeEventListener('keydown', onModalEsc);
+  document.removeEventListener('click', onClickOverlay);
+  modal.removeEventListener('keydown', trapFocus);
+  order.focus();
+}
+
+const focusableEls = modal.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="tel"]:not([disabled]), input[type="text"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+const firstFocusableEl = focusableEls[0];
+const lastFocusableEl = focusableEls[focusableEls.length - 1];
+const KEYCODE_TAB = 9;
+
+const trapFocus = (evt) => {
+  const isTabPressed = (evt.key === 'Tab' || evt.keyCode === KEYCODE_TAB);
+
+  if (!isTabPressed) {
+    return;
+  }
+
+  if (evt.shiftKey) {
+    if (document.activeElement === firstFocusableEl) {
+      lastFocusableEl.focus();
+      evt.preventDefault();
+    }
+  } else {
+    if (document.activeElement === lastFocusableEl) {
+      firstFocusableEl.focus();
+      evt.preventDefault();
+    }
+  }
+};
+
+function modalOpen() {
+  pageBody.classList.add('scroll-lock');
+  modal.classList.remove('visually-hidden');
+  userNameInputOnModal.focus();
+  closeButton.addEventListener('click', closeModal);
+  document.addEventListener('keydown', onModalEsc);
+  modal.addEventListener('keydown', trapFocus);
+  modal.addEventListener('click', onClickOverlay);
+}
+
+function onModalEsc(evt) {
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    closeModal();
+  }
+}
+
+let modalWrapper = document.querySelector('.modal__wrapper');
+function onClickOverlay(evt) {
+  const elementsСlickArea = !evt.composedPath().includes(modalWrapper);
+  if (elementsСlickArea) {
+    closeModal();
+  }
+}

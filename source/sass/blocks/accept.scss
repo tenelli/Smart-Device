@@ -1,5 +1,8 @@
-.accept label {
+.accept {
   position: relative;
+}
+
+.accept label {
   cursor: pointer;
 
   &::before {

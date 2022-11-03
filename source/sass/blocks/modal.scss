@@ -1,0 +1,134 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 16, 27, 0.7);
+  z-index: 20;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 15px;
+    font-family: $roboto-condensed;
+    color: $base-white;
+    font-size: 30px;
+    line-height: 42px;
+    font-weight: 400;
+  }
+
+  p {
+    max-width: 380px;
+    font-size: 16px;
+    line-height: 22px;
+    color: $base-white;
+    margin-bottom: 40px;
+  }
+
+  input,
+  textarea {
+    width: calc(100% - 30px);
+    margin-bottom: 25px;
+  }
+}
+
+.modal__button {
+  width: 100%;
+  font-family: $roboto-condensed;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background-color: $black-pearl-2;
+  padding: 15px 25px;
+  color: $base-white;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 3px;
+}
+
+.modal__wrapper {
+  position: relative;
+  background-color: $deep-sky-blue;
+  margin: auto;
+  margin-top: 146px;
+  padding: 40px;
+  width: 26%;
+}
+
+.modal__accept {
+  margin-left: 9px;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  label {
+    position: relative;
+    cursor: pointer;
+    color: $base-white;
+    font-size: 14px;
+    line-height: 16px;
+    padding-left: 26px;
+    width: 100%;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 1px solid $base-white;
+      border-radius: 2px;
+      background-color: $transparent;
+    }
+  }
+}
+
+.modal__accept input:checked + label::after {
+  content: "";
+  position: absolute;
+  background-image: url("../img/svg/check.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  left: 3px;
+  width: 12px;
+  height: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: $transparent;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 23px;
+    height: 2px;
+    background-color: $base-white;
+    top: 20px;
+    right: 10px;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+}
