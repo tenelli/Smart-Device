@@ -34,18 +34,18 @@
 
 
   article {
-    max-width: 595px;
     padding-top: 40px;
     padding-left: 45px;
     padding-right: 45px;
     min-height: 300px;
-    border: solid 1px #EBEBEB; //переделать в название
+    border: solid 1px $whisper;
     border-left: 5px solid $deep-sky-blue;
 
     &:hover {
       background-color: $deep-sky-blue;
 
-      p, h2 {
+      p,
+      h2 {
         color: $base-white;
       }
 
@@ -66,7 +66,6 @@
       padding-left: 30px;
       padding-right: 30px;
     }
-
   }
 
   svg {

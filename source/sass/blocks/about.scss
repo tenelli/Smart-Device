@@ -13,7 +13,6 @@
     margin-bottom: 30px; // чисто на глаз, пиксель-перфект вылечит
     font-size: 16px;
     line-height: 22px;
-    max-width: 970px;
 
     @media (max-width: $tablet-width) {
       width: 495px;
@@ -43,13 +42,13 @@
 
     // временные кислотные цвета, заменить на вменяемое решение
     &:hover {
-      border-color: violet;
-      color: violet;
+      border-color: $fuchsia;
+      color: $fuchsia;
     }
 
     &:active {
-      border-color: yellowgreen;
-      color: yellowgreen;
+      border-color: $yellowgreen;
+      color: $yellowgreen;
     }
   }
 }
@@ -92,6 +91,7 @@
 
 .about__mobile {
   display: none;
+
   @media (max-width: $mobile-width) {
     display: block;
   }

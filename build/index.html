@@ -18,10 +18,12 @@
     <header class="header">
       <div class="header__container container">
         <div class="header__logo">
-          <picture>
-            <source media="(min-width: 320px) and (max-width: 767px)" srcset="./img/logo_mobile.svg">
-            <img src="./img/logo.svg" alt="Логотип сайта">
-          </picture>
+          <a>
+            <picture>
+              <source media="(min-width: 320px) and (max-width: 767px)" srcset="./img/logo_mobile.svg">
+              <img src="./img/logo.svg" alt="Логотип сайта">
+            </picture>
+          </a>
         </div>
         <div class="header__contact contact contact--first">
           <a href="mailto:info@sd.ru">
@@ -39,7 +41,7 @@
             <span>+7 (495) 000 52 52</span>
           </a>
         </div>
-        <button class="order" type="button">Заказать звонок</button>
+        <button class="order" type="button" data-order-button>Заказать звонок</button>
       </div>
     </header>
     <main>
@@ -48,7 +50,7 @@
         <div class="container">
           <h2>Печатные платы</h2>
           <p>производство и монтаж, поставка комплектующих,<br> блоков и модулей</p>
-          <a href="#">
+          <a href="#callback">
             <span>Получить бесплатную консультацию</span>
             <span>Бесплатная консультация</span>
           </a>
@@ -91,7 +93,6 @@
           </li>
           <li>
             <article>
-
               <h2>Персонализация стоимости</h2>
               <p>Мы  подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.
               </p>
@@ -109,12 +110,12 @@
             <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
               <span class="about__desktop">Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span>
             </p>
-            <p class="about__additional no-js">
+            <p class="about__additional no-js" data-additional-text>
               <span class="about__mobile">Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.</span>
             </p>
-            <p class="about__additional no-js">Smart Device - это команда профессионалов. Через нас прошло более 1 000 000 клиентов, 70% из которых продолжают сотрудничество по сей день. На данный момент насчитывается более 14 офисов по всей стране и 20 городов присутствия.</p>
-            <p class="about__additional no-js">Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и время наших клиентов</p>
-            <button type="button" class="about__more-button closed no-js__button">Подробнее</button>
+            <p class="about__additional no-js" data-additional-text>Smart Device - это команда профессионалов. Через нас прошло более 1 000 000 клиентов, 70% из которых продолжают сотрудничество по сей день. На данный момент насчитывается более 14 офисов по всей стране и 20 городов присутствия.</p>
+            <p class="about__additional no-js" data-additional-text>Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании. Использование инновационных технологий помогает экономить деньги и время наших клиентов</p>
+            <button type="button" class="about__more-button is-closed no-js__button" data-more-button>Подробнее</button>
           </div>
         </div>
       </section>
@@ -136,33 +137,35 @@
           </div>
         </div>
       </section>
-      <section class="callback">
+      <section class="callback" id="callback">
         <div class="container">
           <div class="callback__wrapper">
             <div class="callback__image"></div>
             <div class="callback__form-wrapper">
               <h2>Остались вопросы? Задайте их нам!</h2>
               <p>Мы проконсультируем Вас бесплатно</p>
-              <form class="form callback__form" action="https://echo.htmlacademy.ru" method="post">
-                <div class="callback__inputs-wrapper">
-                  <label>
-                    <input type="text" name="user-name" placeholder="Имя" required>
-                  </label>
-                  <label>
-                    <input type="phone" name="user-phone-number" placeholder="Телефон" maxlength="18" required data-phone-pattern>
-                  </label>
-                </div>
-                <label>
-                  <textarea name="user-question" placeholder="Ваш вопрос" cols="30" rows="10"></textarea> <br>
-                </label>
-                <div class="callback__submit-wrapper">
-                  <button type="submit">Задать вопрос</button>
-                  <div class="callback__checkbox-wrapper accept">
-                    <input type="checkbox" id="user-accept" name="user-accept" class="visually-hidden" required checked>
-                    <label for="user-accept">Я согласен на обработку персональных данных</label>
+              <div class="form-wrapper callback__form-wrapper">
+                <form action="https://echo.htmlacademy.ru" method="post">
+                  <div class="callback__inputs-wrapper">
+                    <label>
+                      <input type="text" name="user-name" placeholder="Имя" required>
+                    </label>
+                    <label>
+                      <input type="tel" name="user-phone-number" placeholder="Телефон" maxlength="18" required data-phone-pattern>
+                    </label>
                   </div>
-                </div>
-              </form>
+                  <label>
+                    <textarea name="user-question" placeholder="Ваш вопрос" cols="30" rows="10"></textarea> <br>
+                  </label>
+                  <div class="callback__submit-wrapper">
+                    <div class="callback__checkbox-wrapper accept">
+                      <input type="checkbox" id="user-accept" name="user-accept" class="visually-hidden" required checked>
+                      <label for="user-accept">Я согласен на обработку персональных данных</label>
+                    </div>
+                    <button type="submit">Задать вопрос</button>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -172,7 +175,9 @@
       <div class="footer__wrapper">
         <section class="footer__social">
           <h2 class="visually-hidden">О нас.</h2>
-          <img class="footer__logo" src="./img/logo.svg" alt="Логотип сайта">
+          <a href="#">
+            <img class="footer__logo" src="./img/logo.svg" width="215" height="55" alt="Логотип сайта">
+          </a>
           <ul>
             <li>
               <a href="#">
@@ -200,8 +205,8 @@
         </section>
         <section class="footer__main">
           <div class="footer__navigation">
-            <h3 class="accordion no-js">Разделы сайта</h3>
-            <ul class="panel no-js">
+            <h3 class="footer__accordion no-js" data-accordion-title>Разделы сайта</h3>
+            <ul class="footer__panel no-js" data-accordion-text>
               <li>
                 <a href="#">О Компании</a>
               </li>
@@ -226,8 +231,8 @@
             </ul>
           </div>
           <div class="footer__contacts">
-            <h3 class="accordion no-js">Наш офис</h3>
-            <ul class="panel no-js">
+            <h3 class="footer__accordion no-js" data-accordion-title>Наш офис</h3>
+            <ul class="footer__panel no-js" data-accordion-text>
               <li>
                 <a href="https://yandex.ru/maps/-/CCUV6HALDD">г. Мытищи, Олимпийский проспект, д.10</a>
               </li>
@@ -243,29 +248,31 @@
         </section>
       </div>
     </footer>
-    <div class="modal visually-hidden">
-      <div class="modal__wrapper">
-        <button type="button" class="modal__close-button"" id="modal__close-button">
+    <div class="modal visually-hidden" data-modal-container>
+      <div class="modal__wrapper" data-modal-wrapper>
+        <button type="button" class="modal__close-button" data-close-button>
           <span class="visually-hidden">Закрыть</span>
         </button>
         <h2>Закажите звонок</h2>
         <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
-        <form class="form" action="https://echo.htmlacademy.ru" method="post">
-          <label>
-            <input type="text" name="user-name" placeholder="Имя" required data-input-username>
-          </label>
-          <label>
-            <input type="phone" name="user-phone-number" placeholder="Телефон" maxlength="18" required data-phone-pattern>
-          </label>
-          <label>
-            <textarea name="user-question" placeholder="Ваш вопрос" cols="30" rows="10"></textarea>
-          </label>
-          <button class="modal__button" type="submit">Отправить</button>
-          <div class="modal__accept">
-            <input type="checkbox" id="user-data" name="user-data" class="visually-hidden" required checked>
-            <label for="user-data">Я согласен на обработку персональных данных</label>
-          </div>
-        </form>
+        <div class="form-wrapper modal__form-wrapper">
+          <form action="https://echo.htmlacademy.ru" method="post" data-modal-form>
+            <label>
+              <input type="text" name="user-name" placeholder="Имя" required data-input-username>
+            </label>
+            <label>
+              <input type="tel" name="user-phone-number" placeholder="Телефон" maxlength="18" required data-phone-pattern data-input-phone>
+            </label>
+            <label>
+              <textarea name="user-question" placeholder="Ваш вопрос" cols="30" rows="10" data-textarea-question></textarea>
+            </label>
+            <button class="modal__button" type="submit">Отправить</button>
+            <div class="modal__accept">
+              <input type="checkbox" id="user-data" name="user-data" class="visually-hidden" required checked>
+              <label for="user-data">Я согласен на обработку персональных данных</label>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <script src="js/main.min.js"></script>

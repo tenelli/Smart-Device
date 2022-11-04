@@ -7,6 +7,7 @@
 
   @media (min-width: 1024px) {
     @include retina {
+      background-image: url("../img/background_desktop@2x.jpg");
     }
   }
 
@@ -56,7 +57,7 @@
   }
 
   p {
-    color: white;
+    color: $base-white;
     font-size: 22px;
     line-height: 34px;
     margin: 0;
@@ -128,6 +129,7 @@
 
     span:last-of-type {
       display: none;
+
       @media (max-width: $mobile-width) {
         display: block;
         width: 220px;

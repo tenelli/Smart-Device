@@ -522,6 +522,7 @@ html {
   font-style: normal;
   font-weight: 400;
   font-family: "PT Mono", "Courier New", monospace;
+  scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
@@ -677,7 +678,7 @@ button,
 
 .header button {
   background: rgba(255, 255, 255, 0);
-  border: 1px solid #F2F5F6;
+  border: 1px solid #f2f5f6;
   border-radius: 3px;
   cursor: pointer;
   font-family: "Roboto Condensed", "Arial", sans-serif;
@@ -718,11 +719,11 @@ button,
 }
 
 .contact a:hover span {
-  color: #005B82;
+  color: #005b82;
 }
 
 .contact a:hover svg {
-  fill: #005B82;
+  fill: #005b82;
 }
 
 .contact a span {
@@ -758,7 +759,7 @@ button,
 }
 
 .welcome p {
-  color: white;
+  color: #ffffff;
   font-size: 22px;
   line-height: 34px;
   margin: 0;
@@ -785,7 +786,7 @@ button,
 }
 
 .welcome a span:hover {
-  background-color: #005B82;
+  background-color: #005b82;
   border-radius: 6px;
 }
 
@@ -813,12 +814,11 @@ button,
 }
 
 .advantages article {
-  max-width: 595px;
   padding-top: 40px;
   padding-left: 45px;
   padding-right: 45px;
   min-height: 300px;
-  border: solid 1px #EBEBEB;
+  border: solid 1px #ebebeb;
   border-left: 5px solid #00b2ff;
 }
 
@@ -893,7 +893,6 @@ button,
 
 .products a {
   display: block;
-  max-width: 350px;
   min-height: 650px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -906,12 +905,12 @@ button,
 }
 
 .products a:hover {
-  border: 2px solid yellowgreen;
+  border: 2px solid #9acd32;
   border-radius: 8px;
 }
 
 .products a:active {
-  border: 2px solid violet;
+  border: 2px solid #be68be;
   border-radius: 8px;
 }
 
@@ -956,7 +955,6 @@ button,
   margin-bottom: 30px;
   font-size: 16px;
   line-height: 22px;
-  max-width: 970px;
 }
 
 .about button {
@@ -976,13 +974,13 @@ button,
 }
 
 .about button:hover {
-  border-color: violet;
-  color: violet;
+  border-color: #be68be;
+  color: #be68be;
 }
 
 .about button:active {
-  border-color: yellowgreen;
-  color: yellowgreen;
+  border-color: #9acd32;
+  color: #9acd32;
 }
 
 .about__text {
@@ -1032,11 +1030,15 @@ button,
   padding-left: 5px;
 }
 
-.callback__form textarea {
+.callback__form-wrapper textarea {
   width: calc(100% - 30px);
 }
 
-.callback__form button {
+.callback__form-wrapper input {
+  width: calc(100% - 30px);
+}
+
+.callback__form-wrapper button {
   width: 265px;
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-size: 16px;
@@ -1048,6 +1050,9 @@ button,
   color: #ffffff;
   text-transform: uppercase;
   border-radius: 3px;
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1;
 }
 
 .callback__inputs-wrapper {
@@ -1082,8 +1087,8 @@ button,
   padding-left: 26px;
 }
 
-.form input,
-.form textarea {
+.form-wrapper input,
+.form-wrapper textarea {
   margin: 0;
   padding: 15px;
   background-color: rgba(4, 20, 39, 0.15);
@@ -1091,42 +1096,42 @@ button,
   border: 0;
 }
 
-.form input::-webkit-input-placeholder,
-.form textarea::-webkit-input-placeholder {
+.form-wrapper input::-webkit-input-placeholder,
+.form-wrapper textarea::-webkit-input-placeholder {
   color: #ffffff;
   font-size: 16px;
   line-height: 22px;
 }
 
-.form input::-moz-placeholder,
-.form textarea::-moz-placeholder {
+.form-wrapper input::-moz-placeholder,
+.form-wrapper textarea::-moz-placeholder {
   color: #ffffff;
   font-size: 16px;
   line-height: 22px;
 }
 
-.form input:-ms-input-placeholder,
-.form textarea:-ms-input-placeholder {
+.form-wrapper input:-ms-input-placeholder,
+.form-wrapper textarea:-ms-input-placeholder {
   color: #ffffff;
   font-size: 16px;
   line-height: 22px;
 }
 
-.form input::-ms-input-placeholder,
-.form textarea::-ms-input-placeholder {
+.form-wrapper input::-ms-input-placeholder,
+.form-wrapper textarea::-ms-input-placeholder {
   color: #ffffff;
   font-size: 16px;
   line-height: 22px;
 }
 
-.form input::placeholder,
-.form textarea::placeholder {
+.form-wrapper input::placeholder,
+.form-wrapper textarea::placeholder {
   color: #ffffff;
   font-size: 16px;
   line-height: 22px;
 }
 
-.form input {
+.form-wrapper input {
   margin-bottom: 20px;
 }
 
@@ -1228,7 +1233,7 @@ button,
   grid-template-columns: 1fr 1fr;
 }
 
-.accordion.active::before {
+.footer__accordion.is-active::before {
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
@@ -1457,17 +1462,13 @@ button,
     background-image: url("../../img/product_3_desktop.jpg");
   }
 
-  .callback__form {
+  .callback__form-wrapper {
     padding-left: 5px;
     max-width: 580px;
   }
 
-  .callback__form textarea {
+  .callback__form-wrapper textarea {
     margin-bottom: 40px;
-  }
-
-  .callback__form input {
-    width: 245px;
   }
 
   .callback__wrapper {
@@ -1487,9 +1488,10 @@ button,
   }
 
   .footer__wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 3fr;
+    grid-template-columns: 1fr 3fr;
     min-width: 944px;
     max-width: 64%;
     padding: 50px 20px;
@@ -1520,6 +1522,10 @@ button,
 }
 
 @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1024px) and (-o-min-device-pixel-ratio: 3/2), (min-width: 1024px) and (min-resolution: 144dpi), (min-width: 1024px) and (min-resolution: 1.5dppx) {
+  .welcome {
+    background-image: url("../img/background_desktop@2x.jpg");
+  }
+
   .products a:first-child {
     background-image: url("../../img/product_1_desktop@2x.jpg");
   }
@@ -1667,22 +1673,14 @@ button,
     margin-bottom: 25px;
   }
 
-  .callback__form {
+  .callback__form-wrapper {
     width: 100%;
     padding-left: 0;
   }
 
-  .callback__form textarea {
+  .callback__form-wrapper textarea {
     margin-bottom: 35px;
     max-height: 105px;
-  }
-
-  .callback__form input {
-    width: calc(100% - 30px);
-  }
-
-  .callback__inputs-wrapper {
-    width: 100%;
   }
 
   .callback__submit-wrapper {
@@ -1886,12 +1884,12 @@ button,
     line-height: 19px;
   }
 
-  .callback__form textarea {
+  .callback__form-wrapper textarea {
     margin-bottom: 30px;
     max-height: 150px;
   }
 
-  .callback__form button {
+  .callback__form-wrapper button {
     margin-bottom: 25px;
     width: 100%;
   }
@@ -1901,7 +1899,11 @@ button,
   }
 
   .callback__submit-wrapper {
-    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 0;
   }
 
   .callback__checkbox-wrapper {
@@ -1924,7 +1926,7 @@ button,
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    background-color: white;
+    background-color: #ffffff;
   }
 
   .footer h3::before {
@@ -1945,7 +1947,7 @@ button,
     -ms-flex-direction: column;
     flex-direction: column;
     padding-bottom: 25px;
-    border-bottom: 1px solid #F8FDFF;
+    border-bottom: 1px solid #f8fdff;
   }
 
   .footer__logo {
@@ -1964,12 +1966,12 @@ button,
 
   .footer__navigation {
     padding: 20px 25px;
-    border-bottom: 1px solid #F8FDFF;
+    border-bottom: 1px solid #f8fdff;
   }
 
   .footer__contacts {
     padding: 20px 25px;
-    border-bottom: 1px solid #F8FDFF;
+    border-bottom: 1px solid #f8fdff;
   }
 
   .footer__contacts li:first-child {
@@ -1984,12 +1986,12 @@ button,
     display: block;
   }
 
-  .panel {
+  .footer__panel {
     display: none;
   }
 
-  .panel.show,
-  .panel.no-js {
+  .footer__panel.is-open,
+  .footer__panel.no-js {
     display: block;
   }
 }

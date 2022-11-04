@@ -85,8 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // показываем дополнительный текст в блоке "О компании"
-let moreButton = document.querySelector('.about__more-button');
-let additional = document.querySelectorAll('.about__additional');
+let moreButton = document.querySelector('[data-more-button]');
+let additional = document.querySelectorAll('[data-additional-text]');
 additional.forEach((element) => {
   element.classList.add('visually-hidden');
 });
@@ -100,8 +100,8 @@ if (moreButton) {
 }
 
 function showMore() {
-  moreButton.classList.toggle('closed');
-  if (!moreButton.classList.contains('closed')) {
+  moreButton.classList.toggle('is-closed');
+  if (!moreButton.classList.contains('is-closed')) {
     moreButton.textContent = 'Скрыть';
     additional.forEach((element) => {
       element.classList.remove('visually-hidden');
@@ -114,57 +114,69 @@ function showMore() {
   }
 }
 
-let acc = document.querySelectorAll('.accordion');
-let panel = document.querySelectorAll('.panel');
-if (acc && panel) {
-  acc.forEach((element) => {
+let accordionTitle = document.querySelectorAll('[data-accordion-title]');
+let accordionText = document.querySelectorAll('[data-accordion-text]');
+if (accordionTitle && accordionText) {
+  accordionTitle.forEach((element) => {
     if (element.classList.contains('no-js')) {
       element.classList.remove('no-js');
     }
   });
 
-  panel.forEach((element) => {
+  accordionText.forEach((element) => {
     if (element.classList.contains('no-js')) {
       element.classList.remove('no-js');
     }
   });
 
 
-  acc.forEach((element) => {
+  accordionTitle.forEach((element) => {
     element.addEventListener('click', () => {
-      let setClasses = !element.classList.contains('active');
-      setClass(acc, 'active', 'remove');
-      setClass(panel, 'show', 'remove');
+      let setClasses = !element.classList.contains('is-active');
+      setClass(accordionTitle, 'is-active', 'remove');
+      setClass(accordionText, 'is-open', 'remove');
 
       if (setClasses) {
-        element.classList.toggle('active');
-        element.nextElementSibling.classList.toggle('show');
+        element.classList.toggle('is-active');
+        element.nextElementSibling.classList.toggle('is-open');
       }
     });
   });
 }
 
-function setClass(els, className, fnName) {
-  for (let i = 0; i < els.length; i++) {
-    els[i].classList[fnName](className);
+function setClass(elements, className, fnName) {
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].classList[fnName](className);
   }
 }
 
-let order = document.querySelector('.order');
-let modal = document.querySelector('.modal');
-let closeButton = document.querySelector('.modal__close-button');
+
+let orderButton = document.querySelector('[data-order-button]');
+let modal = document.querySelector('[data-modal-container]');
+let closeButton = document.querySelector('[data-close-button]');
 let pageBody = document.body;
+let modalForm = document.querySelector('[data-modal-form]');
+let modalUserName = document.querySelector('[data-input-username]');
+let modalUserPhone = document.querySelector('[data-input-phone]');
+let modalTextarea = document.querySelector('[data-textarea-question]');
+let isStorageSupport = true;
+let userNameStorage = '';
+let userPhoneStorage = '';
 
-const userNameInputOnModal = document.querySelector('[data-input-username]');
+if (modal) {
+  try {
+    userNameStorage = localStorage.getItem('modalUserName');
+    userPhoneStorage = localStorage.getItem('phoneInputOnModal');
+  } catch (err) {
+    isStorageSupport = false;
+  }
 
-if (order) {
-  order.addEventListener('click', modalOpen);
+  orderButton.addEventListener('click', openModal);
 }
 
 function isEscapeKey(evt) {
   return evt.key === 'Escape';
 }
-
 
 function closeModal() {
   modal.classList.add('visually-hidden');
@@ -173,15 +185,16 @@ function closeModal() {
   document.removeEventListener('keydown', onModalEsc);
   document.removeEventListener('click', onClickOverlay);
   modal.removeEventListener('keydown', trapFocus);
-  order.focus();
+  orderButton.focus();
+  modalForm.removeEventListener('submit', checkFillInputField);
 }
 
-const focusableEls = modal.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="tel"]:not([disabled]), input[type="text"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
-const firstFocusableEl = focusableEls[0];
-const lastFocusableEl = focusableEls[focusableEls.length - 1];
-const KEYCODE_TAB = 9;
+let focusableEls = modal.querySelectorAll('a[href]:not([disabled]), button:not([disabled]), textarea:not([disabled]), input[type="text"]:not([disabled]), input[type="radio"]:not([disabled]), input[type="tel"]:not([disabled]), input[type="text"]:not([disabled]), input[type="checkbox"]:not([disabled]), select:not([disabled])');
+let firstFocusableEl = focusableEls[0];
+let lastFocusableEl = focusableEls[focusableEls.length - 1];
+let KEYCODE_TAB = 9;
 
-const trapFocus = (evt) => {
+let trapFocus = (evt) => {
   const isTabPressed = (evt.key === 'Tab' || evt.keyCode === KEYCODE_TAB);
 
   if (!isTabPressed) {
@@ -201,14 +214,22 @@ const trapFocus = (evt) => {
   }
 };
 
-function modalOpen() {
+function openModal() {
   pageBody.classList.add('scroll-lock');
   modal.classList.remove('visually-hidden');
-  userNameInputOnModal.focus();
+  modalUserName.focus();
+  if (userNameStorage) {
+    modalUserName.value = userNameStorage;
+    modalUserPhone.value = userPhoneStorage;
+    modalTextarea.focus();
+  } else {
+    modalUserName.focus();
+  }
   closeButton.addEventListener('click', closeModal);
   document.addEventListener('keydown', onModalEsc);
   modal.addEventListener('keydown', trapFocus);
   modal.addEventListener('click', onClickOverlay);
+  modalForm.addEventListener('submit', checkFillInputField);
 }
 
 function onModalEsc(evt) {
@@ -218,10 +239,21 @@ function onModalEsc(evt) {
   }
 }
 
-let modalWrapper = document.querySelector('.modal__wrapper');
+let modalWrapper = document.querySelector('[data-modal-wrapper]');
 function onClickOverlay(evt) {
   const elementsСlickArea = !evt.composedPath().includes(modalWrapper);
   if (elementsСlickArea) {
     closeModal();
+  }
+}
+
+function checkFillInputField(evt) {
+  if (!modalUserName || !modalUserPhone) {
+    evt.preventDefault();
+  } else {
+    if (isStorageSupport) {
+      localStorage.setItem('modalUserName', modalUserName.value);
+      localStorage.setItem('phoneInputOnModal', modalUserPhone.value);
+    }
   }
 }
