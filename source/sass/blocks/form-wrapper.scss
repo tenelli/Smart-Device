@@ -3,9 +3,14 @@
   textarea {
     margin: 0;
     padding: 15px;
+    padding-bottom: 20px;
     background-color: $black-opacity;
     color: $base-black;
     border: 0;
+  }
+
+  textarea {
+    padding-top: 20px;
   }
 
   input::placeholder,

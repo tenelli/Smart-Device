@@ -1,4 +1,7 @@
 .contact {
+  display: flex;
+  gap: 120px;
+
   @media (max-width: $tablet-width) {
     margin-right: 40px;
   }

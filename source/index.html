@@ -16,24 +16,22 @@
   </head>
   <body>
     <header class="header">
-      <div class="header__container container">
+      <div class="header__container">
         <div class="header__logo">
           <a>
             <picture>
               <source media="(min-width: 320px) and (max-width: 767px)" srcset="./img/logo_mobile.svg">
-              <img src="./img/logo.svg" alt="Логотип сайта">
+              <img src="./img/logo.svg" width="215" height="55" alt="Логотип сайта">
             </picture>
           </a>
         </div>
-        <div class="header__contact contact contact--first">
+        <div class="header__contact contact">
           <a href="mailto:info@sd.ru">
             <svg width="21" height="20" viewBox="0 0 21 20" >
               <use xlink:href="img/sprite/sprite.svg#email"></use>
             </svg>
             <span>info@sd.ru</span>
           </a>
-        </div>
-        <div class="header__contact contact contact--second">
           <a href="tel:+74950005252">
             <svg width="21" height="20" viewBox="0 0 21 20">
               <use xlink:href="img/sprite/sprite.svg#phone_call"></use>
@@ -57,7 +55,7 @@
         </div>
       </section>
       <section class="advantages">
-        <div class="container">
+        <div class="container advantages__container">
           <h2 class="visually-hidden">Преимущества</h2>
         <ul>
           <li>
@@ -93,6 +91,9 @@
           </li>
           <li>
             <article>
+              <svg width="35" height="35" viewBox="0 0 35 35" >
+                <use xlink:href="img/sprite/sprite.svg#tag"></use>
+              </svg>
               <h2>Персонализация стоимости</h2>
               <p>Мы  подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.
               </p>
@@ -141,7 +142,7 @@
         <div class="container">
           <div class="callback__wrapper">
             <div class="callback__image"></div>
-            <div class="callback__form-wrapper">
+            <div class="callback__form-container">
               <h2>Остались вопросы? Задайте их нам!</h2>
               <p>Мы проконсультируем Вас бесплатно</p>
               <div class="form-wrapper callback__form-wrapper">
@@ -175,8 +176,8 @@
       <div class="footer__wrapper">
         <section class="footer__social">
           <h2 class="visually-hidden">О нас.</h2>
-          <a href="#">
-            <img class="footer__logo" src="./img/logo.svg" width="215" height="55" alt="Логотип сайта">
+          <a class="footer__logo" href="#">
+            <img src="./img/logo.svg" width="215" height="55" alt="Логотип сайта">
           </a>
           <ul>
             <li>

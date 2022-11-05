@@ -5,12 +5,12 @@
     line-height: 51px;
     font-weight: 400;
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 
   p {
     margin: 0;
-    margin-bottom: 30px; // чисто на глаз, пиксель-перфект вылечит
+    margin-bottom: 20px;
     font-size: 16px;
     line-height: 22px;
 
@@ -39,6 +39,7 @@
     line-height: 17px;
     letter-spacing: 0.05em;
     color: $deep-sky-blue;
+    margin-top: 20px;
 
     // временные кислотные цвета, заменить на вменяемое решение
     &:hover {
@@ -55,7 +56,7 @@
 
 .about__text {
   padding-left: 250px;
-  padding-bottom: 120px;
+  padding-bottom: 118px;
   position: relative;
 
   @media (max-width: $tablet-width) {
@@ -73,10 +74,14 @@
   content: "";
   width: 150px;
   height: 320px;
-  background-image: url("../../img/2022.png");
+  background-image: url("../img/2022.png");
   background-size: cover;
   top: 0;
   left: 0;
+
+  @include retina {
+    background-image: url("../img/2022@2x.png");
+  }
 
   @media (max-width: $mobile-width) {
     display: none;

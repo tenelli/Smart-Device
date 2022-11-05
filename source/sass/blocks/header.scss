@@ -2,7 +2,7 @@
   width: 100%;
   color: $base-white;
   background: $black-to-bottom;
-  padding: 30px 0 40px 0;
+  padding: 25px 0 35px 0;
   max-height: 120px;
 
   @media (min-width: $desktop-width) {
@@ -36,6 +36,7 @@
     font-weight: 700;
     letter-spacing: 0.05em;
     padding: 10px 15px;
+    margin-right: 60px;
 
     &:hover {
       border-radius: 6px;
@@ -50,16 +51,39 @@
 
 .header__container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  margin: 0 auto;
+
+  @media (min-width: $desktop-width) {
+    min-width: 944px;
+    max-width: 1220px;
+    padding: 0 20px;
+    justify-content: space-between;
+}
 
   @media (max-width: $tablet-width) {
     justify-content: flex-start;
+    min-width: 668px;
+    padding: 0 50px;
+  }
+
+  @media (max-width: $mobile-width) {
+    min-width: 270px;
+    padding: 0 25px;
   }
 }
 
 .header__logo {
+  padding-top: 5px;
+
   @media (max-width: $tablet-width) {
     margin-right: auto;
+  }
+}
+
+.header__logo img {
+  @media (max-width: $mobile-width) {
+    max-width: 35px;
+    max-height: 35px;
   }
 }
