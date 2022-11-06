@@ -6,7 +6,7 @@
   cursor: pointer;
 
   &:hover {
-    color: $base-black;
+    text-decoration: underline;
   }
 
   &::before {

@@ -1177,7 +1177,7 @@ button,
 }
 
 .accept label:hover {
-  color: #000000;
+  text-decoration: underline;
 }
 
 .accept label::before {
@@ -1402,7 +1402,7 @@ button,
 }
 
 .modal__accept label:hover {
-  color: #000000;
+  text-decoration: underline;
 }
 
 .modal__accept label::before {
