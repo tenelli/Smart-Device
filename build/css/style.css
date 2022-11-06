@@ -711,11 +711,14 @@ button,
   padding-top: 5px;
 }
 
+.header__contact {
+  margin-right: 28px;
+}
+
 .contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 120px;
 }
 
 .contact a {
@@ -829,7 +832,6 @@ button,
   padding-right: 45px;
   border: solid 1px #ebebeb;
   border-left: 5px solid #00b2ff;
-  min-height: 260px;
 }
 
 .advantages article:hover {
@@ -1461,7 +1463,7 @@ button,
   .footer__wrapper {
     display: block;
     min-width: 668px;
-    padding: 50px 50px 65px;
+    padding: 50px 45px 65px 50px;
   }
 }
 
@@ -1481,15 +1483,23 @@ button,
     justify-content: space-between;
   }
 
+  .contact {
+    gap: 120px;
+  }
+
+  .advantages article {
+    min-height: 260px;
+  }
+
   .products a:first-child {
     background-image: url("../img/product_1_desktop.jpg");
   }
 
-  .products a:nth-child(2) {
+  .products a:nth-child(2n) {
     background-image: url("../img/product_2_desktop.jpg");
   }
 
-  .products a:nth-child(2) span:last-of-type {
+  .products a:nth-child(2n) span:last-of-type {
     display: none;
   }
 
@@ -1574,7 +1584,7 @@ button,
     background-image: url("../img/product_1_desktop@2x.jpg");
   }
 
-  .products a:nth-child(2) {
+  .products a:nth-child(2n) {
     background-image: url("../img/product_2_desktop@2x.jpg");
   }
 
@@ -1597,7 +1607,7 @@ button,
     position: absolute;
     z-index: 20;
     max-height: 100px;
-    padding: 20px 0 40px;
+    padding: 10px 0 40px;
   }
 
   .header button {
@@ -1614,10 +1624,14 @@ button,
 
   .header__logo {
     margin-right: auto;
+    padding-top: 10px;
   }
 
   .contact {
-    margin-right: 40px;
+    width: 82px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 
   .contact a span {
@@ -1626,7 +1640,7 @@ button,
 
   .welcome {
     padding-top: 180px;
-    padding-bottom: 205px;
+    padding-bottom: 221px;
     background-image: url("../img/background_tablet.jpg");
   }
 
@@ -1634,13 +1648,14 @@ button,
     font-size: 64px;
     line-height: 75px;
     padding-left: 0;
+    margin-bottom: 0;
   }
 
   .welcome p {
     font-size: 22px;
     line-height: 34px;
     padding-left: 0;
-    margin-bottom: 65px;
+    margin-bottom: 75px;
   }
 
   .welcome a {
@@ -1654,17 +1669,37 @@ button,
 
   .advantages {
     padding-top: 80px;
-    padding-bottom: 80px;
+    padding-bottom: 75px;
+  }
+
+  .advantages ul {
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    row-gap: 26px;
   }
 
   .advantages article {
+    padding-right: 40px;
+    min-height: 320px;
     max-width: 320px;
-    min-height: 360px;
+  }
+
+  .advantages svg {
+    margin-bottom: 10px;
+  }
+
+  .advantages h2 {
+    margin-bottom: 7px;
   }
 
   .products {
-    padding-top: 60px;
+    padding-top: 55px;
     padding-bottom: 75px;
+  }
+
+  .products h2 {
+    margin-bottom: 38px;
   }
 
   .products .products__wrapper {
@@ -1672,8 +1707,10 @@ button,
   }
 
   .products a {
-    max-width: 670px;
+    max-width: 100%;
     min-height: 250px;
+    padding-top: 37px;
+    padding-left: 45px;
   }
 
   .products a:not(:last-child) {
@@ -1684,11 +1721,11 @@ button,
     background-image: url("../img/product_1_tablet.jpg");
   }
 
-  .products a:nth-child(2) {
+  .products a:nth-child(2n) {
     background-image: url("../img/product_2_tablet.jpg");
   }
 
-  .products a:nth-child(2) span:first-of-type {
+  .products a:nth-child(2n) span:first-of-type {
     display: none;
   }
 
@@ -1696,19 +1733,31 @@ button,
     background-image: url("../img/product_3_tablet.jpg");
   }
 
+  .about h3 {
+    margin-bottom: 11px;
+  }
+
   .about p {
     width: 495px;
   }
 
+  .about button {
+    margin-top: -5px;
+  }
+
   .about__text {
-    padding-left: 179px;
-    padding-bottom: 80px;
+    padding-left: 174px;
+    padding-bottom: 79px;
+  }
+
+  .about__text::before {
+    top: 5px;
   }
 
   .callback {
     background-image: none;
-    padding-top: 50px;
-    padding-bottom: 125px;
+    padding-top: 43px;
+    padding-bottom: 123px;
   }
 
   .callback h2 {
@@ -1717,6 +1766,7 @@ button,
 
   .callback p {
     margin-bottom: 25px;
+    padding-left: 0;
   }
 
   .callback__form-wrapper {
@@ -1725,12 +1775,29 @@ button,
   }
 
   .callback__form-wrapper textarea {
-    margin-bottom: 35px;
+    margin-bottom: 25px;
     max-height: 105px;
+  }
+
+  .callback__form-wrapper button {
+    margin-top: 5px;
   }
 
   .callback__submit-wrapper {
     gap: 85px;
+  }
+
+  .form-wrapper textarea {
+    padding-top: 30px;
+  }
+
+  .form-wrapper input {
+    padding-bottom: 15px;
+  }
+
+  .footer__social ul {
+    margin-top: 5px;
+    gap: 15px;
   }
 
   .footer__social {
@@ -1745,6 +1812,10 @@ button,
   .footer__navigation li:not(:last-child) {
     margin-bottom: 10px;
   }
+
+  .footer__main {
+    gap: 30px;
+  }
 }
 
 @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
@@ -1756,7 +1827,7 @@ button,
     background-image: url("../img/product_1_tablet@2x.jpg");
   }
 
-  .products a:nth-child(2) {
+  .products a:nth-child(2n) {
     background-image: url("../img/product_2_tablet@2x.jpg");
   }
 
@@ -1839,7 +1910,6 @@ button,
 
   .advantages article {
     max-width: 84%;
-    min-height: 340px;
     padding-top: 30px;
     padding-left: 30px;
     padding-right: 30px;
@@ -1894,7 +1964,7 @@ button,
     background-image: url("../img/product_1_mobile.jpg");
   }
 
-  .products a:nth-child(2) {
+  .products a:nth-child(2n) {
     background-image: url("..img/product_2_mobile.jpg");
   }
 
@@ -2061,7 +2131,7 @@ button,
     background-image: url("../img/product_1_mobile@2x.jpg");
   }
 
-  .products a:nth-child(2) {
+  .products a:nth-child(2n) {
     background-image: url("../img/product_2_mobile@2x.jpg");
   }
 

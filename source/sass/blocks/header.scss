@@ -15,7 +15,7 @@
     position: absolute;
     z-index: 20;
     max-height: 100px;
-    padding: 20px 0 40px;
+    padding: 10px 0 40px;
   }
 
   @media (max-width: $mobile-width) {
@@ -78,6 +78,7 @@
 
   @media (max-width: $tablet-width) {
     margin-right: auto;
+    padding-top: 10px;
   }
 }
 
@@ -86,4 +87,8 @@
     max-width: 35px;
     max-height: 35px;
   }
+}
+
+.header__contact {
+  margin-right: 28px;
 }

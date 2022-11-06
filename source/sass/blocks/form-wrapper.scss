@@ -11,6 +11,10 @@
 
   textarea {
     padding-top: 20px;
+
+    @media (max-width: $tablet-width) {
+      padding-top: 30px;
+    }
   }
 
   input::placeholder,
@@ -22,5 +26,9 @@
 
   input {
     margin-bottom: 20px;
+
+    @media (max-width: $tablet-width) {
+      padding-bottom: 15px;
+    }
   }
 }

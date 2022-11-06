@@ -7,8 +7,8 @@
 
   @media (max-width: $tablet-width) {
     background-image: none;
-    padding-top: 50px;
-    padding-bottom: 125px;
+    padding-top: 43px;
+    padding-bottom: 123px;
   }
 
   @media (max-width: $mobile-width) {
@@ -45,6 +45,7 @@
 
     @media (max-width: $tablet-width) {
       margin-bottom: 25px;
+      padding-left: 0;
     }
 
     @media (max-width: $mobile-width) {
@@ -76,7 +77,7 @@
     }
 
     @media (max-width: $tablet-width) {
-      margin-bottom: 35px;
+      margin-bottom: 25px;
       max-height: 105px;
     }
 
@@ -104,6 +105,10 @@
     text-transform: uppercase;
     border-radius: 3px;
     order: -1;
+
+    @media (max-width: $tablet-width) {
+      margin-top: 5px;
+    }
 
     @media (max-width: $mobile-width) {
       margin-bottom: 25px;

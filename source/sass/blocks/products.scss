@@ -4,7 +4,7 @@
   padding-bottom: 139px;
 
   @media (max-width: $tablet-width) {
-    padding-top: 60px;
+    padding-top: 55px;
     padding-bottom: 75px;
   }
 
@@ -21,6 +21,10 @@
     font-size: 36px;
     line-height: 51px;
     font-weight: 400;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 38px;
+    }
 
     @media (max-width: $mobile-width) {
       font-size: 28px;
@@ -107,8 +111,10 @@
     }
 
     @media (max-width: $tablet-width) {
-      max-width: 670px;
+      max-width: 100%;
       min-height: 250px;
+      padding-top: 37px;
+      padding-left: 45px;
 
       &:not(:last-child) {
         margin-bottom: 30px;
@@ -146,7 +152,7 @@
       }
     }
 
-    &:nth-child(2) {
+    &:nth-child(2n) {
       @media (min-width: $desktop-width) {
         background-image: url("../img/product_2_desktop.jpg");
 
