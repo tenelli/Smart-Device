@@ -9,7 +9,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    padding-top: 50px;
+    padding-top: 45px;
     padding-bottom: 86px;
   }
 
@@ -29,6 +29,7 @@
     @media (max-width: $mobile-width) {
       font-size: 28px;
       line-height: 40px;
+      margin-bottom: 30px;
     }
   }
 
@@ -124,6 +125,9 @@
     @media (max-width: $mobile-width) {
       min-width: 270px;
       min-height: 250px;
+
+      padding-top: 25px;
+      padding-left: 30px;
     }
 
     &:first-child {

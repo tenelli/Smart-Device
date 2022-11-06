@@ -10,6 +10,11 @@
     @media (max-width: $tablet-width) {
       margin-bottom: 11px;
     }
+
+    @media (max-width: $mobile-width) {
+      font-size: 28px;
+      line-height: 40px;
+    }
   }
 
   p {
@@ -23,7 +28,7 @@
     }
 
     @media (max-width: $mobile-width) {
-      max-width: 85%;
+      max-width: 100%;
       font-size: 14px;
       line-height: 19px;
     }
@@ -47,6 +52,13 @@
 
     @media (max-width: $tablet-width) {
       margin-top: -5px;
+    }
+
+    @media (max-width: $mobile-width) {
+      min-width: 160px;
+      margin-top: -10px;
+      padding-top: 8px;
+      padding-bottom: 8px;
     }
 
     // временные кислотные цвета, заменить на вменяемое решение
@@ -74,6 +86,7 @@
 
   @media (max-width: $mobile-width) {
     padding-left: 0;
+    padding-bottom: 81px;
   }
 }
 

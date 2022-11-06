@@ -82,7 +82,7 @@
 
   @media (max-width: $mobile-width) {
     flex-direction: column;
-    padding-bottom: 25px;
+    padding-bottom: 24px;
     border-bottom: 1px solid $alice-blue-2;
   }
 }
@@ -90,6 +90,10 @@
 .footer__logo {
   img {
     margin-bottom: 30px;
+
+    @media (max-width: $mobile-width) {
+      margin-bottom: 10px;
+    }
   }
 
   @media (max-width: $mobile-width) {
@@ -124,17 +128,29 @@
 }
 
 .footer__navigation {
+  h3 {
+    margin: 0;
+    margin-bottom: 22px;
+
+    @media (max-width: $mobile-width) {
+      margin-bottom: 0;
+    }
+  }
+
   @media (min-width: $desktop-width) {
     width: 470px;
     margin-right: 30px;
   }
 
   @media (max-width: $mobile-width) {
-    padding: 20px 25px;
+    padding: 20px 25px 22px;
     border-bottom: 1px solid $alice-blue-2;
   }
 
   ul {
+    margin: 0;
+    padding: 0;
+
     @media (min-width: $desktop-width) {
       display: flex;
       flex-wrap: wrap;
@@ -142,6 +158,10 @@
       height: 130px;
       column-gap: 30px;
       row-gap: 10px;
+    }
+
+    @media (max-width: $mobile-width) {
+      padding-top: 22px;
     }
   }
 
@@ -157,22 +177,49 @@
 }
 
 .footer__contacts {
+  ul {
+    @media (max-width: $mobile-width) {
+      padding-top: 18px;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    margin-bottom: 23px;
+
+    @media (max-width: $mobile-width) {
+      margin-bottom: 0;
+    }
+  }
+
   li:not(:last-child) {
     margin-bottom: 10px;
   }
 
   @media (max-width: $mobile-width) {
-    padding: 20px 25px;
+    padding: 22px 25px 18px;
     border-bottom: 1px solid $alice-blue-2;
 
     li:first-child {
       margin-bottom: 15px;
+
+      a {
+        font-size: 14px;
+        line-height: 19px;
+      }
     }
 
     li:not(:first-child) {
+      margin-bottom: 5px;
+
       a {
+        font-size: 14px;
         line-height: 25px;
       }
+    }
+
+    li:last-child {
+      margin-bottom: 0;
     }
   }
 }
@@ -188,6 +235,7 @@
 
   @media (max-width: $mobile-width) {
     display: block;
+    padding-top: 0;
   }
 }
 
@@ -206,4 +254,10 @@
 
 .footer__accordion.is-active::before {
   transform: rotate(0deg);
+}
+
+.footer__social-link {
+  display: block;
+  width: 40px;
+  height: 40px;
 }

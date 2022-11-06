@@ -20,7 +20,7 @@
 
   @media (max-width: $mobile-width) {
     max-height: 70px;
-    padding: 15px 0 20px;
+    padding: 5px 0 20px;
   }
 
   button {
@@ -70,6 +70,7 @@
   @media (max-width: $mobile-width) {
     min-width: 270px;
     padding: 0 25px;
+    justify-content: space-between;
   }
 }
 
@@ -79,6 +80,10 @@
   @media (max-width: $tablet-width) {
     margin-right: auto;
     padding-top: 10px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-right: 0;
   }
 }
 
@@ -90,5 +95,12 @@
 }
 
 .header__contact {
-  margin-right: 28px;
+  @media (max-width: $tablet-width) {
+    margin-right: 28px;
+  }
+
+  @media (max-width: $mobile-width) {
+    margin-top: 4px;
+    margin-right: 20px;
+  }
 }

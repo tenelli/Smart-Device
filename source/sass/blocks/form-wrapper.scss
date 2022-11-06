@@ -15,6 +15,10 @@
     @media (max-width: $tablet-width) {
       padding-top: 30px;
     }
+
+    @media (max-width: $mobile-width) {
+      padding-top: 20px;
+    }
   }
 
   input::placeholder,
@@ -29,6 +33,10 @@
 
     @media (max-width: $tablet-width) {
       padding-bottom: 15px;
+    }
+
+    @media (max-width: $mobile-width) {
+      padding-bottom: 18px;
     }
   }
 }

@@ -12,7 +12,7 @@
   }
 
   @media (max-width: $mobile-width) {
-    padding-bottom: 90px;
+    padding-bottom: 86px;
   }
 
   h2 {
@@ -29,7 +29,6 @@
     }
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 20px;
       font-size: 30px;
       line-height: 42px;
     }
@@ -49,7 +48,7 @@
     }
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 40px;
+      margin-bottom: 33px;
       font-size: 14px;
       line-height: 19px;
     }
@@ -70,10 +69,10 @@
 
   textarea {
     width: calc(100% - 30px);
-    height: 115px;
 
     @media (min-width: $desktop-width) {
       margin-bottom: 27px;
+      height: 115px;
     }
 
     @media (max-width: $tablet-width) {
@@ -82,8 +81,8 @@
     }
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 30px;
-      max-height: 150px;
+      margin-bottom: 20px;
+      min-height: 138px;
     }
   }
 
@@ -111,7 +110,7 @@
     }
 
     @media (max-width: $mobile-width) {
-      margin-bottom: 25px;
+      margin-bottom: 10px;
       width: 100%;
     }
   }
