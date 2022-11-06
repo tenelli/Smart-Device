@@ -47,16 +47,6 @@
     }
   }
 
-  .products__wrapper {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 85px;
-
-    @media (max-width: $tablet-width) {
-      display: block;
-    }
-  }
-
   span {
     font-family: $roboto-condensed;
     font-size: 20px;
@@ -96,7 +86,7 @@
       left: 100%;
       transform: translate(-60px, -60px);
       content: "";
-      background-image: url("../img/arrow.svg");
+      background-image: url("../img/svg/arrow.svg");
       background-repeat: no-repeat;
       background-position: 50%;
       width: 60px;
@@ -130,6 +120,7 @@
       padding-left: 30px;
     }
 
+    // к сожалению, не удалось вменяемо задать webp фоном
     &:first-child {
       @media (min-width: $desktop-width) {
         background-image: url("../img/product_1_desktop.jpg");
@@ -215,5 +206,15 @@
         }
       }
     }
+  }
+}
+
+.products__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 85px;
+
+  @media (max-width: $tablet-width) {
+    display: block;
   }
 }

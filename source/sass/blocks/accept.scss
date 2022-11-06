@@ -5,6 +5,10 @@
 .accept label {
   cursor: pointer;
 
+  &:hover {
+    color: $base-black;
+  }
+
   &::before {
     content: "";
     position: absolute;

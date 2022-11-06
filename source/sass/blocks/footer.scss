@@ -38,6 +38,11 @@
     color: $base-white;
     font-size: 16px;
     line-height: 20px;
+
+    &:hover,
+    &:focus {
+      color: $blue-lagoon;
+    }
   }
 
   ul {
@@ -260,4 +265,10 @@
   display: block;
   width: 40px;
   height: 40px;
+
+  svg {
+    &:hover {
+      fill: $deep-sky-blue;
+    }
+  }
 }

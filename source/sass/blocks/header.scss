@@ -41,6 +41,7 @@
     &:hover {
       border-radius: 6px;
       background-color: $deep-sky-blue;
+      border-color: $deep-sky-blue;
     }
 
     @media (max-width: $tablet-width) {
@@ -59,7 +60,7 @@
     max-width: 1220px;
     padding: 0 20px;
     justify-content: space-between;
-}
+  }
 
   @media (max-width: $tablet-width) {
     justify-content: flex-start;

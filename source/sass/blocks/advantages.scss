@@ -118,17 +118,17 @@
       min-height: 310px;
     }
 
-      &--small {
-        min-height: 294px;
+    &--small {
+      min-height: 294px;
 
-        svg {
-          margin-bottom: 14px;
-        }
-
-        h2 {
-          margin-bottom: 13px;
-        }
+      svg {
+        margin-bottom: 14px;
       }
+
+      h2 {
+        margin-bottom: 13px;
+      }
+    }
   }
 
   &:hover {

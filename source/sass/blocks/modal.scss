@@ -46,9 +46,15 @@
   text-transform: uppercase;
   border: none;
   border-radius: 3px;
+
+  &:hover,
+  &:focus {
+    background-color: $base-white;
+    color: $deep-sky-blue;
+    border-radius: 6px;
+  }
 }
 
-// пропиши мне правильные углы
 .modal__wrapper {
   position: relative;
   background-color: $deep-sky-blue;
@@ -56,6 +62,7 @@
   margin-top: 146px;
   padding: 40px;
   width: 26%;
+  border-radius: 3px;
 }
 
 .modal__accept {
@@ -74,6 +81,10 @@
     line-height: 16px;
     padding-left: 26px;
     width: 100%;
+
+    &:hover {
+      color: $base-black;
+    }
 
     &::before {
       content: "";

@@ -150,7 +150,7 @@ function setClass(elements, className, fnName) {
   }
 }
 
-
+// приключения модального окна
 let orderButton = document.querySelector('[data-order-button]');
 let modal = document.querySelector('[data-modal-container]');
 let closeButton = document.querySelector('[data-close-button]');

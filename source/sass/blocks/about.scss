@@ -62,14 +62,16 @@
     }
 
     // временные кислотные цвета, заменить на вменяемое решение
-    &:hover {
-      border-color: $fuchsia;
-      color: $fuchsia;
+    &:hover,
+    &:focus {
+      background-color: $deep-sky-blue;
+      color: $base-white;
     }
 
     &:active {
-      border-color: $yellowgreen;
-      color: $yellowgreen;
+      color: $base-white;
+      background-color: $blue-lagoon;
+      border-color: $blue-lagoon;
     }
   }
 }
