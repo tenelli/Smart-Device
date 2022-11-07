@@ -949,7 +949,6 @@ button,
   display: block;
 }
 
-.no-js__button,
 .no-js::before,
 .no-js::after {
   display: none;

@@ -92,7 +92,7 @@ additional.forEach((element) => {
 });
 
 if (moreButton) {
-  moreButton.classList.remove('no-js__button');
+  moreButton.classList.remove('visually-hidden');
   additional.forEach((element) => {
     element.classList.remove('no-js');
   });
