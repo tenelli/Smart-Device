@@ -4,13 +4,14 @@
   left: 0;
   display: flex;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+  overflow: auto;
   background-color: rgba(3, 16, 27, 0.7);
   z-index: 20;
 
   h2 {
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 2px;
     font-family: $roboto-condensed;
     color: $base-white;
     font-size: 30px;
@@ -19,17 +20,28 @@
   }
 
   p {
+    margin: 0;
     max-width: 380px;
     font-size: 16px;
     line-height: 22px;
     color: $base-white;
-    margin-bottom: 40px;
+    margin-bottom: 38px;
   }
 
   input,
   textarea {
     width: calc(100% - 30px);
-    margin-bottom: 25px;
+  }
+
+  input {
+    margin-bottom: 16px;
+  }
+
+  textarea {
+    height: 110px;
+    padding-top: 25px;
+    padding-left: 14px;
+    margin-bottom: 22px;
   }
 }
 
@@ -41,11 +53,12 @@
   font-weight: 700;
   letter-spacing: 0.05em;
   background-color: $black-pearl-2;
-  padding: 15px 25px;
+  padding: 15px 25px 13px;
   color: $base-white;
   text-transform: uppercase;
   border: none;
   border-radius: 3px;
+  order: -1;
 
   &:hover,
   &:focus {
@@ -56,12 +69,14 @@
 }
 
 .modal__wrapper {
-  position: relative;
+  position: absolute;
   background-color: $deep-sky-blue;
-  margin: auto;
-  margin-top: 146px;
+  top: 146px;
+  left: calc(50% - 256px);
   padding: 40px;
-  width: 26%;
+  padding-top: 39px;
+  padding-left: 38px;
+  width: 420px;
   border-radius: 3px;
 }
 
@@ -81,10 +96,7 @@
     line-height: 16px;
     padding-left: 26px;
     width: 100%;
-
-    &:hover {
-      text-decoration: underline;
-    }
+    border: $transparent;
 
     &::before {
       content: "";
@@ -143,4 +155,19 @@
   &::before {
     transform: rotate(45deg);
   }
+}
+
+.modal__accept input:hover + label,
+.modal__accept input:focus + label {
+  text-decoration: underline;
+}
+
+.modal__accept input:active + label {
+  text-decoration: none;
+  color: $black-pearl-2;
+}
+
+.modal__submit-wrapper {
+  display: flex;
+  flex-direction: column;
 }

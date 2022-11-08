@@ -1,13 +1,21 @@
 .contact {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   @media (min-width: $desktop-width) {
-    gap: 120px;
+    width: 460px;
   }
 
   @media (max-width: $tablet-width) {
-    width: 82px;
-    justify-content: space-between;
+    max-width: 220px;
+    justify-content: flex-end;
+    margin-left: 40px;
+    gap: 42px;
+  }
+
+  @media (max-width: $mobile-width) {
+    max-width: 120px;
   }
 
   a {

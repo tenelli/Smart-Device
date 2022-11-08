@@ -60,7 +60,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let val = evt.target.value.replace(/\D/g, '');
     if (clearVal !== 'false' && evt.type === 'blur') {
       if (val.length < matrix.match(/([\_\d])/g).length) {
-        evt.target.value = '';
+        // вариант с очисткой поля, для пиксель-перфекта, например
+        // evt.target.value = '';
         return;
       }
     }
@@ -102,7 +103,7 @@ if (moreButton) {
 function showMore() {
   moreButton.classList.toggle('is-closed');
   if (!moreButton.classList.contains('is-closed')) {
-    moreButton.textContent = 'Скрыть';
+    moreButton.textContent = 'Свернуть';
     additional.forEach((element) => {
       element.classList.remove('visually-hidden');
     });

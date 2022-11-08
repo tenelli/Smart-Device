@@ -121,7 +121,7 @@
     }
 
     // к сожалению, не удалось вменяемо задать webp фоном
-    &:first-child {
+    &:nth-child(3n+1) {
       @media (min-width: $desktop-width) {
         background-image: url("../img/product_1_desktop.jpg");
 
@@ -147,7 +147,7 @@
       }
     }
 
-    &:nth-child(2n) {
+    &:nth-child(3n-1) {
       @media (min-width: $desktop-width) {
         background-image: url("../img/product_2_desktop.jpg");
 
@@ -173,7 +173,7 @@
       }
 
       @media (max-width: $mobile-width) {
-        background-image: url("..img/product_2_mobile.jpg");
+        background-image: url("../img/product_2_mobile.jpg");
 
         @include retina {
           background-image: url("../img/product_2_mobile@2x.jpg");
@@ -181,7 +181,7 @@
       }
     }
 
-    &:last-child {
+    &:nth-child(3n) {
       @media (min-width: $desktop-width) {
         background-image: url("../img/product_3_desktop.jpg");
 
