@@ -115,6 +115,7 @@ function showMore() {
   }
 }
 
+let accordionBlock = document.querySelectorAll('[data-accordion-block]');
 let accordionTitle = document.querySelectorAll('[data-accordion-title]');
 let accordionText = document.querySelectorAll('[data-accordion-text]');
 if (accordionTitle && accordionText) {
@@ -131,15 +132,16 @@ if (accordionTitle && accordionText) {
   });
 
 
-  accordionTitle.forEach((element) => {
+  accordionBlock.forEach((element) => {
     element.addEventListener('click', () => {
-      let setClasses = !element.classList.contains('is-active');
+      let temp = element.firstElementChild;
+      let setClasses = !temp.classList.contains('is-active');
       setClass(accordionTitle, 'is-active', 'remove');
       setClass(accordionText, 'is-open', 'remove');
 
       if (setClasses) {
-        element.classList.toggle('is-active');
-        element.nextElementSibling.classList.toggle('is-open');
+        temp.classList.toggle('is-active');
+        temp.nextElementSibling.classList.toggle('is-open');
       }
     });
   });

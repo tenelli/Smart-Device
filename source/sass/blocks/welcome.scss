@@ -13,8 +13,8 @@
   }
 
   @media (max-width: $tablet-width) {
-    padding-top: 180px;
-    padding-bottom: 208px;
+    padding-top: 293px;
+    padding-bottom: 209px;
     background-image: url("../img/background_tablet.jpg");
 
     @include retina {
@@ -24,7 +24,7 @@
 
   @media (max-width: $mobile-width) {
     background-image: url("../img/background_mobile.jpg");
-    padding-top: 150px;
+    padding-top: 310px;
     padding-bottom: 189px;
 
     @include retina {

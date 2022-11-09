@@ -674,7 +674,27 @@ button,
   padding: 25px 0 35px 0;
 }
 
-.header button {
+.header__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.header__logo {
+  padding-top: 5px;
+  margin-right: auto;
+}
+
+.header__order-wrapper {
+  margin-right: 60px;
+  margin-left: auto;
+  margin-top: 11px;
+}
+
+.header__order-wrapper button {
   background: rgba(255, 255, 255, 0);
   border: 1px solid #f2f5f6;
   border-radius: 3px;
@@ -689,31 +709,12 @@ button,
   min-width: 150px;
   max-width: 180px;
   padding: 10px 15px;
-  margin-right: 60px;
-  margin-left: auto;
 }
 
-.header button:hover {
+.header__order-wrapper button:hover {
   border-radius: 6px;
   background-color: #00b2ff;
   border-color: #00b2ff;
-}
-
-.header__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.header__logo {
-  padding-top: 5px;
-  margin-right: auto;
 }
 
 .contact {
@@ -728,12 +729,10 @@ button,
 }
 
 .contact a {
+  margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   gap: 15px;
 }
 
@@ -1770,13 +1769,10 @@ button,
   }
 
   .header {
-    position: absolute;
+    position: static;
+    margin-bottom: -229px;
     z-index: 20;
     padding: 10px 0 40px;
-  }
-
-  .header button {
-    display: none;
   }
 
   .header__container {
@@ -1796,6 +1792,10 @@ button,
     margin-right: 28px;
   }
 
+  .header__order-wrapper {
+    display: none;
+  }
+
   .contact {
     max-width: 220px;
     -webkit-box-pack: end;
@@ -1810,8 +1810,8 @@ button,
   }
 
   .welcome {
-    padding-top: 180px;
-    padding-bottom: 208px;
+    padding-top: 293px;
+    padding-bottom: 209px;
     background-image: url("../img/background_tablet.jpg");
   }
 
@@ -2015,7 +2015,7 @@ button,
   }
 
   .header {
-    padding: 5px 0 20px;
+    padding: 0 0 20px;
   }
 
   .header__container {
@@ -2027,6 +2027,7 @@ button,
   }
 
   .header__logo {
+    padding-top: 15px;
     margin-right: 20px;
   }
 
@@ -2036,17 +2037,16 @@ button,
   }
 
   .header__contact {
-    margin-top: 4px;
-    margin-right: 20px;
+    margin-right: 18px;
   }
 
   .contact {
-    max-width: 120px;
+    max-width: 150px;
   }
 
   .welcome {
     background-image: url("../img/background_mobile.jpg");
-    padding-top: 150px;
+    padding-top: 310px;
     padding-bottom: 189px;
   }
 
@@ -2141,6 +2141,11 @@ button,
 
   .advantages__wrapper {
     display: block;
+  }
+
+  .advantages__wrapper article {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .products {

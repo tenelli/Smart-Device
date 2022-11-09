@@ -153,5 +153,10 @@
 
   @media (max-width: $mobile-width) {
     display: block;
+
+    article {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

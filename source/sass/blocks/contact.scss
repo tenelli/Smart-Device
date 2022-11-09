@@ -15,12 +15,12 @@
   }
 
   @media (max-width: $mobile-width) {
-    max-width: 120px;
+    max-width: 150px;
   }
 
   a {
+    margin-top: 20px;
     display: flex;
-    align-items: center;
     gap: 15px;
 
     &:hover {

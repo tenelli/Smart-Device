@@ -26,7 +26,7 @@
           </a>
         </div>
         <div class="header__contact contact">
-          <a  class="unselectable" href="mailto:info@sd.ru">
+          <a class="unselectable" href="mailto:info@sd.ru">
             <svg width="21" height="20" viewBox="0 0 21 20" role="img" aria-label="Иконка в виде конверта, предлагающая отправить письмо.">
               <use xlink:href="img/sprite/sprite.svg#email"></use>
             </svg>
@@ -39,7 +39,9 @@
             <span>+7 (495) 000 52 52</span>
           </a>
         </div>
-        <button class="order unselectable" type="button" data-order-button>Заказать звонок</button>
+        <div class="header__order-wrapper">
+          <button class="order unselectable" type="button" data-order-button>Заказать звонок</button>
+        </div>
       </div>
     </header>
     <main>
@@ -195,7 +197,7 @@
             </li>
           </ul>
         </section>
-          <div class="footer__navigation">
+          <div class="footer__navigation" data-accordion-block>
             <h3 class="footer__accordion no-js" data-accordion-title>Разделы сайта</h3>
             <ul class="footer__panel no-js" data-accordion-text>
               <li>
@@ -229,7 +231,7 @@
               </li>
             </ul>
           </div>
-          <div class="footer__contacts">
+          <div class="footer__contacts" data-accordion-block>
             <h3 class="footer__accordion no-js" data-accordion-title>Наш офис</h3>
             <ul class="footer__panel no-js" data-accordion-text>
               <li>
